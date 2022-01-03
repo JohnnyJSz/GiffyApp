@@ -1,0 +1,17 @@
+.noItemMainContainer {
+  border: 2px dashed var(--red-color);
+  background-color: var(--red-bg-color);
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 200px;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+}
+
+.noItemImage {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}

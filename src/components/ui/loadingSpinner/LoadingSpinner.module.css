@@ -1,0 +1,75 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.spinnerOuter {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px dashed var(--blue-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: Outer 10s linear infinite;
+  animation-direction: normal;
+}
+
+@keyframes Outer {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinnerInner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dotted var(--blue-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: Inner 6s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes Inner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bouncingDot {
+  width: 50px;
+  height: 50px;
+  background-color: var(--blue-bg-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: scale(1); */
+  animation-name: bouncing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
