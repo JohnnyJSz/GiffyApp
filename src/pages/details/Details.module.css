@@ -1,0 +1,17 @@
+.detailsMainContainer {
+  border: 5px dashed green;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 15px 15px 0px 0px #8f8f8f;
+}
+
+.detailsTitle {
+  border: 6px dashed green;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 0px 0px #8f8f8f;
+}

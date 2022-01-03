@@ -1,0 +1,18 @@
+.searchResultsMainContainer {
+  border: 5px dashed var(--green-color);
+  background-color: var(--green-bg-color);
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 15px 15px 0px 0px var(--shadow-color);
+}
+.searchResultsTitle {
+  border: 6px dashed var(--blue-color);
+  background-color: var(--blue-bg-color);
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+}
