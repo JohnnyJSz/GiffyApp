@@ -15,7 +15,7 @@ const Gifs = ({ keyword }) => {
           <Gif
             key={gif.id}
             id={gif.id}
-            gif={gif.images.original.url}
+            url={gif.images.original.url}
             title={gif.title}
           />
         ))}

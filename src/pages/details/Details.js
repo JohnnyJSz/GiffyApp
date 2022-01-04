@@ -1,24 +1,21 @@
 import React, { useContext } from "react";
-import StaticContext from "../../context/StaticContext";
+import GifContext from "../../context/GifsContext";
+import Gif from "../../components/gifs/gif/Gif";
 
 import classes from "./Details.module.css";
 
 const Details = ({ params }) => {
-  const context = useContext(StaticContext);
-  console.log(context);
+  const { gifs } = useContext(GifContext);
+  console.log(gifs);
   const id = params.id;
+  const gif = gifs.find((gif) => gif.id === id);
+
+  console.log(gif);
   return (
     <div className={classes.detailsMainContainer}>
       <h2 className={classes.detailsTitle}>DETAILS PAGE</h2>
       <h4>Gif ID: {id}</h4>
-      <div>
-        <p>
-          Name: <b>{context.name}</b>
-        </p>
-        <p>
-          Is programmer: <b>{context.isProgrammer ? "Yes" : "No"}</b>
-        </p>
-      </div>
+      <Gif id={gif.id} url={gif.images.original.url} title={gif.title} />
     </div>
   );
 };
