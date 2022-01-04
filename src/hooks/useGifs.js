@@ -7,9 +7,15 @@ const useGifs = (keyword) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getGifs(keyword, 10).then((gifs) => {
+    //! recuperamos la keyword del localStorage
+    const keywordToUse =
+      keyword || localStorage.getItem("lastKeyword") || "random";
+
+    getGifs(keywordToUse, 10).then((gifs) => {
       setGifs(gifs);
       setIsLoading(false);
+      //! guardamos la keyWord en el localStorage
+      localStorage.setItem("lastKeyword", keyword);
     });
   }, [keyword]);
 

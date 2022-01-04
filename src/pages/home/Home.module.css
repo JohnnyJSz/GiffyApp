@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-  box-shadow: 15px 15px 0px 0px var(--shadow-color);
+  box-shadow: 10px 10px 0px 0px var(--shadow-color);
 }
 
 .homeTitle {
@@ -32,7 +32,7 @@
   width: 80%;
   margin: 1rem auto;
   padding: 1rem;
-  border: 3px dashed var(--purple-color);
+  border: 3px solid var(--purple-color);
   background-color: var(--purple-bg-color);
   display: flex;
   flex-direction: column;

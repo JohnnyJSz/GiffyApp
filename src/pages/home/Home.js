@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "wouter";
 import classes from "./Home.module.css";
 import SearchForm from "../../components/searchForm/SearchForm";
+import Gifs from "../../components/gifs/Gifs";
+import { useEffect } from "react/cjs/react.development";
 
 const SOUTH_AMERICA_GIFS = [
   "Venezuela",
@@ -13,6 +15,10 @@ const SOUTH_AMERICA_GIFS = [
 ];
 
 const Home = () => {
+  const [latestSearchValue, setLatestSearchValue] = useState();
+  useEffect(() => {
+    setLatestSearchValue(localStorage.getItem("lastKeyword"));
+  }, []);
   return (
     <div className={classes.homeMainContainer}>
       <h2 className={classes.homeTitle}>HOME PAGE</h2>
@@ -27,6 +33,12 @@ const Home = () => {
             {option} gifs
           </Link>
         ))}
+      </div>
+      <div className={classes.homeSection}>
+        <h3 className={classes.homeSubTitle}>
+          Latest search: "{latestSearchValue}"
+        </h3>
+        <Gifs keyword={latestSearchValue} />
       </div>
     </div>
   );

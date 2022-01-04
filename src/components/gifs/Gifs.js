@@ -12,7 +12,12 @@ const Gifs = ({ keyword }) => {
       {!isLoading &&
         gifs.length > 0 &&
         gifs.map((gif) => (
-          <Gif key={gif.id} gif={gif.images.original.url} title={gif.title} />
+          <Gif
+            key={gif.id}
+            id={gif.id}
+            gif={gif.images.original.url}
+            title={gif.title}
+          />
         ))}
       {!isLoading && gifs.length < 1 && <NoItem />}
     </div>

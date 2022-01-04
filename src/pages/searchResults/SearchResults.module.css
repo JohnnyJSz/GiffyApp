@@ -5,7 +5,7 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-  box-shadow: 15px 15px 0px 0px var(--shadow-color);
+  box-shadow: 10px 10px 0px 0px var(--shadow-color);
 }
 .searchResultsTitle {
   border: 6px dashed var(--blue-color);
