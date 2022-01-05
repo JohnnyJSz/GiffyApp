@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import GifContext from "../../context/GifsContext";
-import Gif from "../../components/gifs/gif/Gif";
+import GifContext from "context/GifsContext";
+import Gif from "components/gifs/gif";
 
 import classes from "./Details.module.css";
 
@@ -15,7 +15,7 @@ const Details = ({ params }) => {
     <div className={classes.detailsMainContainer}>
       <h2 className={classes.detailsTitle}>DETAILS PAGE</h2>
       <h4>Gif ID: {id}</h4>
-      <Gif id={gif.id} url={gif.images.original.url} title={gif.title} />
+      <Gif id={gif.id} url={gif.url} title={gif.title} />
     </div>
   );
 };

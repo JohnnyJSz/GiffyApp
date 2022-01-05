@@ -1,23 +1,16 @@
-import React, { useState } from "react";
-import { Link } from "wouter";
-import classes from "./Home.module.css";
-import SearchForm from "../../components/searchForm/SearchForm";
-import Gifs from "../../components/gifs/Gifs";
-import { useEffect } from "react/cjs/react.development";
+import React, { useState, useEffect } from "react";
+import SearchForm from "components/searchForm";
+import Gifs from "components/gifs";
+import TrendingSearches from "components/trendingSearches";
 
-const SOUTH_AMERICA_GIFS = [
-  "Venezuela",
-  "Colombia",
-  "Ecuador",
-  "Peru",
-  "Bolivia",
-  "Brasil",
-];
+import classes from "./Home.module.css";
 
 const Home = () => {
   const [latestSearchValue, setLatestSearchValue] = useState();
   useEffect(() => {
-    setLatestSearchValue(localStorage.getItem("lastKeyword"));
+    setLatestSearchValue(
+      localStorage.getItem("lastKeyword")
+    );
   }, []);
   return (
     <div className={classes.homeMainContainer}>
@@ -27,19 +20,12 @@ const Home = () => {
         <SearchForm />
       </div>
       <div className={classes.homeSection}>
-        <h3 className={classes.homeSubTitle}>South America Countries Gifs</h3>
-        {SOUTH_AMERICA_GIFS.map((option) => (
-          <Link to={`/search/${option}`} key={option}>
-            {option} gifs
-          </Link>
-        ))}
-      </div>
-      <div className={classes.homeSection}>
         <h3 className={classes.homeSubTitle}>
-          Latest search: "{latestSearchValue}"
+          Latest search: "{decodeURI(latestSearchValue)}"
         </h3>
         <Gifs keyword={latestSearchValue} />
       </div>
+      <TrendingSearches />
     </div>
   );
 };

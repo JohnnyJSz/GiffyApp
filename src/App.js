@@ -1,10 +1,10 @@
 import { Route, Link } from "wouter";
-import Home from "./pages/home";
-import Detail from "./pages/details";
-import SearchResults from "./pages/searchResults";
-import { HOME, DETAILS, SEARCH_RESULTS } from "./config/paths";
-import StaticContext from "./context/StaticContext";
-import { GifsContextProvider } from "./context/GifsContext";
+import Home from "pages/home";
+import Detail from "pages/details";
+import SearchResults from "pages/searchResults";
+import { HOME, DETAILS, SEARCH_RESULTS } from "config/paths";
+import StaticContext from "context/StaticContext";
+import { GifsContextProvider } from "context/GifsContext";
 
 import classes from "./App.module.css";
 
