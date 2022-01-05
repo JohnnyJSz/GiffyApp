@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
+
 import classes from "./Gif.module.css";
 
 const Gif = ({ id, url, title }) => {

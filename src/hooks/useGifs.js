@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import getGifs from "../services/getGifs";
-import GifsContext from "../context/GifsContext";
+import getGifs from "services/getGifs";
+import GifsContext from "context/GifsContext";
 
 const useGifs = (keyword) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -13,13 +13,13 @@ const useGifs = (keyword) => {
     const keywordToUse =
       keyword || localStorage.getItem("lastKeyword") || "random";
 
-    getGifs(keywordToUse, 10).then((gifs) => {
+    getGifs(keywordToUse, 15).then((gifs) => {
       setGifs(gifs);
       setIsLoading(false);
       //! guardamos la keyWord en el localStorage
       localStorage.setItem("lastKeyword", keyword);
     });
-  }, [keyword, setGifs]);
+  }, []);
 
   return { isLoading, gifs };
 };

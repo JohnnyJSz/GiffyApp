@@ -1,10 +1,24 @@
 const API_KEY = process.env.REACT_APP_GIPHY_KEY;
-const getGifs = async (keyword, limit) => {
-  const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=0&rating=r&lang=en`;
+const API_URL = process.env.REACT_APP_API_URL;
+
+const fromApiResponseToGifs = (apiResponse) => {
+  const { data = [] } = apiResponse;
+  if (Array.isArray(data)) {
+    const gifs = data.map((image) => {
+      const { images, title, id } = image;
+      const { url } = images.original;
+      return { title, id, url };
+    });
+    return gifs;
+  }
+  return [];
+};
+
+const getGifs = async (keyword = "Morty", limit = 10) => {
+  const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=0&rating=r&lang=en`;
   const res = await fetch(apiUrl);
   const response = await res.json();
-  const { data = [] } = response;
-  const gifs = data.map((gif) => gif);
-  return gifs;
+  return fromApiResponseToGifs(response);
 };
+
 export default getGifs;

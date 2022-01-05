@@ -1,8 +1,9 @@
-import useGifs from "../../hooks/useGifs";
-import Gif from "./gif/Gif";
-import LoadingSpinner from "../ui/loadingSpinner/LoadingSpinner";
+import useGifs from "hooks/useGifs";
+import Gif from "components/gifs/gif";
+import LoadingSpinner from "components/ui/loadingSpinner";
+import NoItem from "components/ui/noItem";
+
 import classes from "./Gifs.module.css";
-import NoItem from "../ui/noItem/NoItem";
 
 const Gifs = ({ keyword }) => {
   const { isLoading, gifs } = useGifs(keyword);
@@ -15,7 +16,7 @@ const Gifs = ({ keyword }) => {
           <Gif
             key={gif.id}
             id={gif.id}
-            url={gif.images.original.url}
+            url={gif.url}
             title={gif.title}
           />
         ))}
