@@ -1,0 +1,39 @@
+.categoryMain {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 3px solid var(--blue-color);
+  background-color: var(--blue-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+}
+
+.categoryTitle {
+  border: 4px dashed var(--light-green-color);
+  background-color: var(--light-green-bg-color);
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+}
+
+.categoryLinksContainer {
+  text-align: justify;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryLink {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0.2rem 1rem;
+  color: var(--font-blue-color);
+}
+.categoryLink:hover {
+  transform: scale(1.05);
+  color: var(--blue-color);
+}
