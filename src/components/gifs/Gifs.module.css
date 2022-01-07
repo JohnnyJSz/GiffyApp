@@ -1,14 +1,36 @@
 .gifsMainContainer {
   border: 6px dashed var(--orange-color);
   background-color: var(--orange-bg-color);
-  max-width: 80%;
+  max-width: 100%;
   min-height: 100vh;
   margin: 2rem auto;
+  gap: 20px;
+  padding: 1rem;
+  box-shadow: 5px 5px 0px 0px var(--shadow-color);
+  box-sizing: border-box;
+}
+
+.gifsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 1rem;
+}
+
+.buttonContainer {
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.buttonNextPage {
+  border: 2px dashed var(--blue-color);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  outline: none;
+  background-color: var(--blue-bg-color);
   box-shadow: 5px 5px 0px 0px var(--shadow-color);
-  box-sizing: border-box;
+  color: var(--font-blue-color);
+  border-radius: 20px;
 }

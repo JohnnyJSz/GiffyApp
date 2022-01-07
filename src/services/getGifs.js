@@ -14,8 +14,10 @@ const fromApiResponseToGifs = (apiResponse) => {
   return [];
 };
 
-const getGifs = async (keyword = "Morty", limit = 10) => {
-  const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=0&rating=r&lang=en`;
+const getGifs = async ({ keyword = "Morty", limit = 25, page = 0 } = {}) => {
+  const apiUrl = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${
+    page * limit
+  }&rating=r&lang=en`;
   const res = await fetch(apiUrl);
   const response = await res.json();
   return fromApiResponseToGifs(response);

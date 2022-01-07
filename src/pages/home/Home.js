@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SearchForm from "components/searchForm";
 import Gifs from "components/gifs";
-import TrendingSearches from "components/trendingSearches";
+import LazyTrendingSearches from "components/trendingSearches/LazyTrendingSearches";
 
 import classes from "./Home.module.css";
 
 const Home = () => {
   const [latestSearchValue, setLatestSearchValue] = useState();
   useEffect(() => {
-    setLatestSearchValue(
-      localStorage.getItem("lastKeyword")
-    );
+    setLatestSearchValue(localStorage.getItem("lastKeyword"));
   }, []);
   return (
     <div className={classes.homeMainContainer}>
@@ -25,7 +23,7 @@ const Home = () => {
         </h3>
         <Gifs keyword={latestSearchValue} />
       </div>
-      <TrendingSearches />
+      <LazyTrendingSearches />
     </div>
   );
 };
