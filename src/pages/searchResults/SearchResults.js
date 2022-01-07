@@ -5,7 +5,7 @@ import classes from "./SearchResults.module.css";
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
-  console.log(keyword);
+
   return (
     <div className={classes.searchResultsMainContainer}>
       <h2 className={classes.searchResultsTitle}>
