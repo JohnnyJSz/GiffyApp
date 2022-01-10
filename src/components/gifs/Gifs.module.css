@@ -1,7 +1,7 @@
 .gifsMainContainer {
   border: 6px dashed var(--orange-color);
   background-color: var(--orange-bg-color);
-  max-width: 100%;
+  width: 100%;
   min-height: 100vh;
   margin: 2rem auto;
   gap: 20px;
@@ -11,9 +11,10 @@
 }
 
 .gifsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: masonry;
+  align-items: center;
   gap: 20px;
   padding: 1rem;
 }

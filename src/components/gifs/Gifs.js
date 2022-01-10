@@ -4,6 +4,7 @@ import LoadingSpinner from "components/ui/loadingSpinner";
 import NoItem from "components/ui/noItem";
 
 import classes from "./Gifs.module.css";
+import React from "react";
 
 const Gifs = ({ keyword }) => {
   const { isLoading, gifs, setPage } = useGifs(keyword);
@@ -13,7 +14,7 @@ const Gifs = ({ keyword }) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {isLoading && <LoadingSpinner />}
       <div className={classes.gifsMainContainer}>
         <div className={classes.gifsContainer}>
@@ -30,7 +31,7 @@ const Gifs = ({ keyword }) => {
         </div>
       </div>
       {!isLoading && gifs.length < 1 && <NoItem />}
-    </div>
+    </React.Fragment>
   );
 };
 
